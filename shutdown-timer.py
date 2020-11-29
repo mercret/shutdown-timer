@@ -40,7 +40,7 @@ class ShutdownTimer(Tk):
         if self.started:
             delta = self.target - datetime.datetime.now()
             if delta < datetime.timedelta(0):
-                # os.system(self.command)
+                os.system(self.command)
             else:
                 self.countdownVar.set('{:02}:{:02}:{:02}'.format(delta.seconds//3600, delta.seconds//60%60, delta.seconds%60))
                 self.after(1000, self.countdown)
